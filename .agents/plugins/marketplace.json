@@ -1,0 +1,20 @@
+{
+  "name": "yamm",
+  "interface": {
+    "displayName": "YAMM"
+  },
+  "plugins": [
+    {
+      "name": "yamm",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Communication"
+    }
+  ]
+}

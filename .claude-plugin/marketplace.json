@@ -1,0 +1,24 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "yamm",
+  "owner": {
+    "name": "Talarian"
+  },
+  "metadata": {
+    "description": "Official YAMM plugin marketplace for Claude Code",
+    "version": "0.0.0"
+  },
+  "plugins": [
+    {
+      "name": "yamm",
+      "source": "./",
+      "description": "Set by the first release.",
+      "version": "0.0.0",
+      "author": {
+        "name": "Talarian"
+      },
+      "category": "Communication",
+      "homepage": "https://yamm.com/"
+    }
+  ]
+}
