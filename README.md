@@ -8,7 +8,7 @@ The server is hosted at:
 https://mcp.yamm.com/mcp
 ```
 
-Depending on your client, you either install YAMM from the client's directory or manually add the server URL to your client. Either way, you get [all the YAMM MCP tools](#mcp-tools). For detailed instructions, see:
+You connect to YAMM MCP by adding this server URL to your client, which gives you [all the YAMM MCP tools](#mcp-tools). For detailed instructions, see:
 
 - [ChatGPT](#chatgpt)
 
@@ -60,157 +60,87 @@ To use YAMM MCP you need:
 
 **Signing in.** Your client authenticates to YAMM MCP with OAuth. YAMM opens a browser window for Google sign-in when authentication is required. Accept every permission Google asks for: YAMM sends through Google's Apps Script and Gmail, which refuse a sign-in with fewer permissions. Your client stores the authentication credentials and reuses them for subsequent tool calls.
 
-<!-- TODO: replace the placeholder directory links (TODO-yamm) once YAMM is listed, and add the screenshots. -->
-
 ### ChatGPT
 
-Install the [YAMM plugin from the ChatGPT plugins directory](https://chatgpt.com/plugins/TODO-yamm-plugin-id). Installing the plugin makes YAMM available in ChatGPT and Codex, including the Codex CLI.
+ChatGPT connects to YAMM MCP as a custom MCP server, in ChatGPT on the web. ChatGPT lets a custom MCP server take write actions, such as sending email, only on Business, Enterprise, and Edu workspaces. On other ChatGPT plans, use the [Codex CLI](#codex-cli) instead.
 
-Follow the instructions for your ChatGPT account type:
+On a Business workspace, an admin or owner adds the server. On an Enterprise or Edu workspace, an admin, an owner, or a member with the **Create plugins with MCPs** permission can add it.
 
-- [Personal account](#chatgpt-personal-account)
+To connect ChatGPT to YAMM MCP:
 
-- [Organization account](#chatgpt-organization-account) — Part of a managed workspace
-
-#### ChatGPT personal account
-
-1. Sign in to ChatGPT in your browser or in the ChatGPT desktop app.
-
-   If you're in the browser, you can go directly to the [YAMM plugin's directory listing](https://chatgpt.com/plugins/TODO-yamm-plugin-id), click **Install plugin**, and continue from step 5.
+1. Open ChatGPT in your browser.
 
 1. In the sidebar, select **Plugins**.
 
-1. Search for `YAMM`.
+1. Click **Add**, then select **Add custom MCP server**.
 
-1. Click the **+** button for **YAMM**. In the ChatGPT desktop app, click **Install** instead.
+1. Define the server settings:
 
-1. Click **Continue to YAMM**.
+   - **Name**: Enter `YAMM`.
 
-1. Follow the on-screen instructions to authenticate to YAMM MCP with your Google account.
+   - **Connection**: Select **Server URL** and enter `https://mcp.yamm.com/mcp`.
 
-You can now [use YAMM](#using-yamm) in ChatGPT as well as in Codex, including the Codex CLI.
+   - **Authentication**: Keep **OAuth**.
 
-#### ChatGPT organization account
+   - Check **I understand and want to continue**.
 
-A workspace admin or owner must first make the YAMM plugin available to workspace members. Once the plugin is available, members can individually connect to YAMM MCP.
+1. Click **Create as a plugin**.
 
-##### Add the YAMM plugin to your ChatGPT workspace
+1. Install the YAMM plugin, and follow the on-screen instructions to authenticate to YAMM MCP with your Google account.
 
-If you're a workspace admin or owner:
+Each workspace member authenticates with their own Google account. For who can add, share, and publish custom MCP servers in a workspace, see [Connecting custom MCP servers in ChatGPT](https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt).
 
-1. Sign in to the [OpenAI Admin Console](https://admin.openai.com/).
-
-1. In the sidebar, select **Plugins**.
-
-1. Search for `YAMM`.
-
-1. In the public search results, select **YAMM**.
-
-1. Click **Enable**.
-
-1. In the **Availability** section, select how you want to make the YAMM plugin available to your workspace members:
-
-   - **Available**: Members can search for and install the plugin if they want to use YAMM.
-
-   - **Installed**: Members have the plugin preinstalled, but they still need to authenticate before they can use YAMM.
-
-1. Check and configure the other plugin settings. For more information, see the [OpenAI documentation](https://learn.chatgpt.com/docs/enterprise/apps-and-connectors).
-
-The YAMM plugin is now available to your workspace members. To connect to YAMM MCP, members can follow the instructions in [Connect ChatGPT to YAMM MCP](#connect-chatgpt-to-yamm-mcp).
-
-##### Connect ChatGPT to YAMM MCP
-
-- If the YAMM plugin is not available in your workspace, ask your workspace admin or owner to add it. They can follow the instructions in [Add the YAMM plugin to your ChatGPT workspace](#add-the-yamm-plugin-to-your-chatgpt-workspace).
-
-- If the YAMM plugin is available but not preinstalled in your workspace, follow the instructions in [ChatGPT personal account](#chatgpt-personal-account).
-
-- If the YAMM plugin is preinstalled in your workspace:
-
-  1. Sign in to ChatGPT in your browser or in the ChatGPT desktop app.
-
-     If you're in the browser, you can go directly to the [YAMM plugin's directory listing](https://chatgpt.com/plugins/TODO-yamm-plugin-id), click **Manage**, and continue from step 5.
-
-  1. In the sidebar, select **Plugins**.
-
-  1. Under **Installed**, select **YAMM**.
-
-  1. Click **Manage**.
-
-  1. Click **Connect**.
-
-  1. Click **Continue to YAMM**.
-
-  1. Follow the on-screen instructions to authenticate to YAMM MCP with your Google account.
-
-You can now [use YAMM](#using-yamm) in ChatGPT as well as in Codex, including the Codex CLI.
+You can now [use YAMM](#using-yamm) in ChatGPT.
 
 ### Codex CLI
 
-> **NOTE**
->
-> If you already have [ChatGPT connected to YAMM MCP](#chatgpt), the Codex CLI is also connected — provided you're signed in to the CLI with the same ChatGPT user account. If not, connecting the CLI also connects ChatGPT and the rest of Codex to YAMM MCP.
+To connect the Codex CLI to YAMM MCP:
 
-1. Open the Codex CLI in your terminal.
+1. Open your terminal and run the following command:
 
-1. Enter `/plugins`. Codex lists all available plugins.
+   ```bash
+   codex mcp add yamm --url https://mcp.yamm.com/mcp
+   ```
 
-1. Enter `YAMM` to filter the list.
+1. Run the following command, and follow the on-screen instructions to authenticate to YAMM MCP with your Google account:
 
-1. In the list, select **YAMM**.
+   ```bash
+   codex mcp login yamm
+   ```
 
-1. Select **Install plugin**.
+The Codex IDE extension and the ChatGPT desktop app on the same computer share this configuration.
 
-1. Select **Install on ChatGPT**. ChatGPT opens in your browser.
-
-   If you have an organization account and Codex does not show **Install on ChatGPT**, YAMM is not available in your ChatGPT workspace. Select **Uninstall plugin**, and ask your workspace admin or owner to add YAMM. They can follow the instructions in [Add the YAMM plugin to your ChatGPT workspace](#add-the-yamm-plugin-to-your-chatgpt-workspace).
-
-1. Sign in to ChatGPT.
-
-1. Click **Manage**.
-
-1. Click **Connect**.
-
-1. Click **Continue to YAMM**.
-
-1. Follow the on-screen instructions to authenticate to YAMM MCP with your Google account.
-
-1. Back in the Codex CLI, select **I've installed it**.
-
-You can now [use YAMM](#using-yamm) in the Codex CLI as well as in ChatGPT and the rest of Codex.
+You can now [use YAMM](#using-yamm) in the Codex CLI.
 
 ### Claude
 
-Install the [YAMM connector from the Claude connectors directory](https://claude.ai/directory/connectors/TODO-yamm). Installing the connector makes YAMM available in Claude and Claude Code.
-
 Follow the instructions for your Claude account type:
 
-- [Personal account](#claude-personal-account) — Free, Pro, or Max plan
+- [Personal account](#claude-personal-account) — Free, Pro, Max, or Ultra plan
 
-- [Organization account](#claude-organization-account) — Part of a team
+- [Organization account](#claude-organization-account) — Team or Enterprise plan
 
 #### Claude personal account
 
 1. Open Claude in your browser or in the Claude desktop app.
 
-   If you're in the browser, you can go directly to the [YAMM connector's directory listing](https://claude.ai/directory/connectors/TODO-yamm) and continue from step 6.
+1. In the main sidebar, select **Customize**, then select **Connectors**.
 
-1. In the main sidebar, click your user name and select **Settings**.
+1. Click **Add**, then select **Add custom connector**.
 
-1. In the settings sidebar, select **Customize > Connectors**.
+1. Enter `YAMM` as the name and `https://mcp.yamm.com/mcp` as the remote MCP server URL, then click **Continue**.
 
-1. Search for `YAMM`.
+1. Keep the authentication settings marked **Detected**, and click **Add**.
 
-1. Select **YAMM**.
+1. Click **Connect**, and follow the on-screen instructions to authenticate to YAMM MCP with your Google account.
 
-1. Click **Connect to Claude**.
-
-1. Follow the on-screen instructions to authenticate to YAMM MCP.
+On the Free plan, you can add one custom connector.
 
 You can now [use YAMM](#using-yamm) in Claude.
 
 #### Claude organization account
 
-An organization owner must first make the YAMM connector available to organization members. Once the connector is available, members can individually authenticate to YAMM MCP.
+An organization owner must first add YAMM as a custom connector for the organization. Once the connector is added, members can individually authenticate to YAMM MCP.
 
 ##### Add the YAMM connector to your Claude organization
 
@@ -222,19 +152,11 @@ If you're an organization owner:
 
 1. In the settings sidebar, select **Plugins > Connectors**.
 
-1. Click **Add > All available**.
+1. Click **Add**, then select **Custom**. If Claude asks for the connector type, choose **Web**.
 
-1. Search for `YAMM`.
+1. Enter `YAMM` as the name and `https://mcp.yamm.com/mcp` as the remote MCP server URL. If the dialog shows **Continue**, click it.
 
-1. Click the **+** button for **YAMM**.
-
-1. Click **Connect for your team**.
-
-1. (Optional) To modify the tool permission restrictions for your organization:
-
-   1. Select the **Tools** tab.
-
-   1. Check the permission restrictions and adjust them as needed.
+1. Keep the authentication settings marked **Detected**, and click **Add**.
 
 The YAMM connector is now available to your organization members.
 
@@ -242,15 +164,11 @@ The YAMM connector is now available to your organization members.
 
 1. Open Claude in your browser or in the Claude desktop app.
 
-   If you're in the browser, you can go directly to the [YAMM connector's directory listing](https://claude.ai/directory/connectors/TODO-yamm), click **Connect**, and continue from step 5.
+1. In the main sidebar, select **Customize**, then select **Connectors**.
 
-1. In the main sidebar, click your user name and select **Settings**.
+1. Find **YAMM**, labeled as custom, and click **Connect**.
 
-1. In the settings sidebar, select **Customize > Connectors**.
-
-1. Click **Connect** for **YAMM**.
-
-1. Follow the on-screen instructions to authenticate to YAMM MCP.
+1. Follow the on-screen instructions to authenticate to YAMM MCP with your Google account.
 
 1. (Optional) To modify the tool permissions:
 
@@ -388,10 +306,6 @@ How many recipients can I still email with YAMM today?
 How do I add a personalized link to my YAMM draft?
 ```
 
-## Data and privacy
-
-YAMM MCP works through your Google account, only on the spreadsheet and Gmail draft your client names in a tool call. It reads the sheet and the draft to merge them, sends from your Gmail account, and writes each row's status to the sheet. At sign-in, you grant YAMM access to Gmail and Google Sheets. Your AI assistant gets back counts, statuses and IDs, never a recipient's row or a personalized email. YAMM stores your subject lines, the spreadsheet's ID and title, tracking counts, and the addresses that bounced or unsubscribed, which it checks before each mail merge. It does not store your other recipients' addresses, your drafts or your sheet's contents. For details, see [what data YAMM stores](https://yamm.com/help/resources/data-security-and-policy/data-policy/data-storage-what-data-is-stored-by-yamm-and-how-is-it-used/) and the [YAMM privacy policy](https://yamm.com/privacy-policy/).
-
 ## Important behavior and safe use
 
 **Approving tool calls.** MCP clients ask you to approve tool calls before they run. Where that prompt appears, how it is worded, and whether you can pre-approve a tool all vary by client. The two tools that send email declare themselves as making changes, so clients that act on those declarations will prompt you before running them.
@@ -403,20 +317,6 @@ YAMM MCP works through your Google account, only on the spreadsheet and Gmail dr
 **YAMM writes to your sheet.** It adds the `Merge status` column and notes. Do not edit or delete the tracking notes on the email address cells, or tracking stops working for those rows.
 
 **Bounces put your account at risk.** If many emails bounce, YAMM stops the mail merge. Check the addresses in your sheet before sending again.
-
-## Platforms and compatibility
-
-<!-- TODO: fill in which clients were tested end to end before release. -->
-
-| Client | Tested | Restrictions to know |
-| --- | --- | --- |
-| ChatGPT | To confirm | Organization accounts: An admin or owner must first make the YAMM plugin available. |
-| Codex CLI | To confirm | Organization accounts: An admin or owner must first make the YAMM plugin available. |
-| Claude | To confirm | Organization accounts: An owner must first make the YAMM connector available. |
-| Claude Code CLI | To confirm | None |
-| Other MCP clients | No | Untested. Follow your client's own documentation. |
-
-Every client needs Streamable HTTP support and OAuth to connect.
 
 ## YAMM limitations
 
@@ -435,13 +335,13 @@ Your plan sets how many recipients you can email in 24 hours, counting CC and BC
 
 ## Troubleshooting
 
-**Sign-in fails, or the client says YAMM needs authentication.** Run your client's sign-in step rather than retrying the mail merge request. In ChatGPT and Claude, sign in again from the plugin's or connector's settings. This also covers Codex and Claude Code when they're connected through ChatGPT or Claude. If sign-in succeeds but the client still reports a problem, start a new session or chat and try again.
+**Sign-in fails, or the client says YAMM needs authentication.** Run your client's sign-in step rather than retrying the mail merge request. In ChatGPT and Claude, sign in again from the plugin's or connector's settings. In Claude, this also covers the Claude Code CLI when it uses the connector you added in Claude. In the Codex CLI, run `codex mcp login yamm`. In the Claude Code CLI, run `/mcp`, select `yamm`, and select `Authenticate`. If sign-in succeeds but the client still reports a problem, start a new session or chat and try again.
 
 **Sign-in fails after you unchecked a permission.** YAMM needs every permission Google asks for. Sign in again and accept them all.
 
-**Browser sign-in in a terminal, a remote session, or a headless environment.** In the Codex CLI, connect the YAMM plugin in ChatGPT on any device, and then select **I've installed it** in the CLI. In the Claude Code CLI, connect the YAMM connector in Claude on any device, and then start a new CLI session. Signing in from the CLI itself with `/mcp` needs a browser on the machine running the CLI.
+**Browser sign-in in a terminal, a remote session, or a headless environment.** In the Codex CLI, run `codex mcp login yamm --no-browser`, open the printed URL in a browser on any device and sign in, then paste the full redirect URL back into the terminal. In the Claude Code CLI, connect YAMM in Claude on any device, and then start a new CLI session. Signing in from the Claude Code CLI itself with `/mcp` needs a browser on the machine running the CLI.
 
-**The Codex CLI shows YAMM as installed, but every request fails because YAMM MCP is not connected.** The plugin was installed in the CLI without a ChatGPT connection. This happens when YAMM is not available in your ChatGPT workspace. Uninstall the plugin in `/plugins`, ask your workspace admin or owner to [add YAMM to your workspace](#add-the-yamm-plugin-to-your-chatgpt-workspace), and then [install it again](#codex-cli).
+**The Codex CLI lists YAMM, but every request fails because YAMM MCP is not connected.** `codex mcp add` adds the server without signing in. Run `codex mcp login yamm` and sign in.
 
 **Claude cannot reach the server, but your network can.** Remote connectors are brokered from Anthropic's servers, not from your machine. This is true in Claude Desktop and in Cowork as well. A firewall rule or VPN on your own machine is therefore not the cause, and allowing the address locally will not change the result.
 
