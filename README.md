@@ -2,6 +2,10 @@
 
 Placeholder introduction: the first release replaces this title and paragraph with the intro maintained in the internal repository.
 
+> **TIP**
+>
+> YAMM MCP doesn't need other connectors, but it works best alongside the official Gmail and Google Drive or Google Sheets connectors in your client. They can search for and create Gmail drafts, and find and work on your spreadsheets when needed.
+
 The server is hosted at:
 
 ```text
@@ -51,8 +55,6 @@ To use YAMM MCP you need:
 - **A YAMM plan, free or paid.** Your plan sets how many recipients you can email in 24 hours. For current plans, see [YAMM pricing](https://yamm.com/pricing/).
 
 - **A Google Sheet and a Gmail draft.** The sheet holds one row per recipient, with a header row and a column of email addresses. The draft is the email to merge, with markers such as `{{First name}}` that refer to the sheet's column headers. For setup help, see the [YAMM help center](https://yamm.com/help/).
-
-- **Google Drive, Google Sheets, and Gmail connectors in your client.** YAMM MCP does not search, read, or create spreadsheets or drafts. Your client finds them with its own connectors and passes them to YAMM.
 
 **Signing in.** Your client authenticates to YAMM MCP with OAuth. YAMM opens a browser window for Google sign-in when authentication is required. Accept every permission Google asks for: YAMM sends through Google's Apps Script and Gmail, which refuse a sign-in with fewer permissions. Your client stores the authentication credentials and reuses them for subsequent tool calls.
 
