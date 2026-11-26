@@ -12,11 +12,7 @@ You connect to YAMM MCP by adding this server URL to your client, which gives yo
 
 - [ChatGPT](#chatgpt)
 
-- [Codex CLI](#codex-cli)
-
 - [Claude](#claude)
-
-- [Claude Code CLI](#claude-code-cli)
 
 - [Other MCP clients](#other-compatible-mcp-clients) that support remote servers over Streamable HTTP with OAuth
 
@@ -62,7 +58,7 @@ To use YAMM MCP you need:
 
 ### ChatGPT
 
-ChatGPT connects to YAMM MCP as a custom MCP server, in ChatGPT on the web. ChatGPT lets a custom MCP server take write actions, such as sending email, only on Business, Enterprise, and Edu workspaces. On other ChatGPT plans, use the [Codex CLI](#codex-cli) instead.
+ChatGPT connects to YAMM MCP as a custom MCP server, in ChatGPT on the web. ChatGPT lets a custom MCP server take write actions, such as sending email, only on Business, Enterprise, and Edu workspaces. On other ChatGPT plans, ChatGPT can't send email with YAMM.
 
 On a Business workspace, an admin or owner adds the server. On an Enterprise or Edu workspace, an admin, an owner, or a member with the **Create plugins with MCPs** permission can add it.
 
@@ -91,26 +87,6 @@ To connect ChatGPT to YAMM MCP:
 Each workspace member authenticates with their own Google account. For who can add, share, and publish custom MCP servers in a workspace, see [Connecting custom MCP servers in ChatGPT](https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt).
 
 You can now [use YAMM](#using-yamm) in ChatGPT.
-
-### Codex CLI
-
-To connect the Codex CLI to YAMM MCP:
-
-1. Open your terminal and run the following command:
-
-   ```bash
-   codex mcp add yamm --url https://mcp.yamm.com/mcp
-   ```
-
-1. Run the following command, and follow the on-screen instructions to authenticate to YAMM MCP with your Google account:
-
-   ```bash
-   codex mcp login yamm
-   ```
-
-The Codex IDE extension and the ChatGPT desktop app on the same computer share this configuration.
-
-You can now [use YAMM](#using-yamm) in the Codex CLI.
 
 ### Claude
 
@@ -177,30 +153,6 @@ The YAMM connector is now available to your organization members.
    1. In the **Tool permissions** section, check the permissions and adjust them as needed.
 
 You can now [use YAMM](#using-yamm) in Claude.
-
-### Claude Code CLI
-
-> **NOTE**
->
-> If you already have [Claude connected to YAMM MCP](#claude), the Claude Code CLI is also connected — provided you're signed in to the CLI with the same Claude user account.
-
-1. Open your terminal and run the following command:
-
-   ```bash
-   claude mcp add --transport http yamm https://mcp.yamm.com/mcp
-   ```
-
-   This adds the server for the current project only. To make the server available in all your projects, add `--scope user` to the command:
-
-   ```bash
-   claude mcp add --transport http yamm https://mcp.yamm.com/mcp --scope user
-   ```
-
-1. Start a new Claude Code CLI session.
-
-1. Run `/mcp`, select `yamm`, and select `Authenticate`. Follow the on-screen instructions to authenticate to YAMM MCP.
-
-You can now [use YAMM](#using-yamm) in the Claude Code CLI.
 
 ### Other compatible MCP clients
 
@@ -335,13 +287,9 @@ Your plan sets how many recipients you can email in 24 hours, counting CC and BC
 
 ## Troubleshooting
 
-**Sign-in fails, or the client says YAMM needs authentication.** Run your client's sign-in step rather than retrying the mail merge request. In ChatGPT and Claude, sign in again from the plugin's or connector's settings. In Claude, this also covers the Claude Code CLI when it uses the connector you added in Claude. In the Codex CLI, run `codex mcp login yamm`. In the Claude Code CLI, run `/mcp`, select `yamm`, and select `Authenticate`. If sign-in succeeds but the client still reports a problem, start a new session or chat and try again.
+**Sign-in fails, or the client says YAMM needs authentication.** Run your client's sign-in step rather than retrying the mail merge request. In ChatGPT and Claude, sign in again from the plugin's or connector's settings. If sign-in succeeds but the client still reports a problem, start a new session or chat and try again.
 
 **Sign-in fails after you unchecked a permission.** YAMM needs every permission Google asks for. Sign in again and accept them all.
-
-**Browser sign-in in a terminal, a remote session, or a headless environment.** In the Codex CLI, run `codex mcp login yamm --no-browser`, open the printed URL in a browser on any device and sign in, then paste the full redirect URL back into the terminal. In the Claude Code CLI, connect YAMM in Claude on any device, and then start a new CLI session. Signing in from the Claude Code CLI itself with `/mcp` needs a browser on the machine running the CLI.
-
-**The Codex CLI lists YAMM, but every request fails because YAMM MCP is not connected.** `codex mcp add` adds the server without signing in. Run `codex mcp login yamm` and sign in.
 
 **Claude cannot reach the server, but your network can.** Remote connectors are brokered from Anthropic's servers, not from your machine. This is true in Claude Desktop and in Cowork as well. A firewall rule or VPN on your own machine is therefore not the cause, and allowing the address locally will not change the result.
 
