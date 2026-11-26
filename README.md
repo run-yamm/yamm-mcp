@@ -52,7 +52,7 @@ To use YAMM MCP you need:
 
 - **A Google account with Gmail.** YAMM sends from your own Gmail address. The first time you sign in, YAMM creates a YAMM account for you if you do not have one.
 
-- **A YAMM plan with recipients left.** Your plan sets how many recipients you can email in 24 hours. For current plans, see [YAMM pricing](https://yamm.com/pricing/).
+- **A YAMM plan, free or paid.** Your plan sets how many recipients you can email in 24 hours. For current plans, see [YAMM pricing](https://yamm.com/pricing/).
 
 - **A Google Sheet and a Gmail draft.** The sheet holds one row per recipient, with a header row and a column of email addresses. The draft is the email to merge, with markers such as `{{First name}}` that refer to the sheet's column headers. For setup help, see the [YAMM help center](https://yamm.com/help/).
 
