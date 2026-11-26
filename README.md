@@ -310,7 +310,7 @@ Send me a test email first, and wait for my go-ahead before sending to everyone.
 
 ### How YAMM MCP works
 
-**Testing.** Your client sends you a test email, merged from the draft and the first row of the sheet, so you can check it before any recipient gets an email. Tracking, unsubscribe links and polls do not work in test emails.
+**Testing.** Your client can send you a test email first, merged from the draft and the first row of the sheet, so you can check it before any recipient gets an email. Tracking, unsubscribe links and polls do not work in test emails.
 
 **Sending.** When you confirm, your client starts the mail merge. YAMM sends from your Gmail account, one email per visible row, at a median rate of 30 emails per minute. The sending goes on in the background after the call answers.
 
@@ -390,7 +390,7 @@ How do I add a personalized link to my YAMM draft?
 
 ## Data and privacy
 
-YAMM MCP works through your Google account, only on the spreadsheet and Gmail draft your client names in a tool call. It reads the sheet and the draft to merge them, sends from your Gmail account, and writes each row's status to the sheet. It checks the recipients' addresses against YAMM's list of earlier bounces and unsubscribes. Your AI assistant gets back counts, statuses and IDs, never a recipient's row or a personalized email, and YAMM MCP does not store recipients' addresses or row contents. For details, see the [YAMM privacy policy](https://yamm.com/privacy-policy/).
+YAMM MCP works through your Google account, only on the spreadsheet and Gmail draft your client names in a tool call. It reads the sheet and the draft to merge them, sends from your Gmail account, and writes each row's status to the sheet. At sign-in, you grant YAMM access to Gmail and Google Sheets. Your AI assistant gets back counts, statuses and IDs, never a recipient's row or a personalized email. YAMM stores your subject lines, the spreadsheet's ID and title, tracking counts, and the addresses that bounced or unsubscribed, which it checks before each mail merge. It does not store your other recipients' addresses, your drafts or your sheet's contents. For details, see [what data YAMM stores](https://yamm.com/help/resources/data-security-and-policy/data-policy/data-storage-what-data-is-stored-by-yamm-and-how-is-it-used/) and the [YAMM privacy policy](https://yamm.com/privacy-policy/).
 
 ## Important behavior and safe use
 
