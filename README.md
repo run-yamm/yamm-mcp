@@ -28,7 +28,7 @@ You connect to YAMM MCP by adding this server URL to your client, which gives yo
 
 ## Plugin package
 
-**Version:** `0.1.0` · **License:** [Talarian Work License](LICENSE)
+**Version:** `1.0.0` · **License:** [Talarian Work License](LICENSE)
 
 Mail merge for Gmail and Google Sheets with YAMM (Yet Another Mail Merge): send a personalized email to each person on a list in a Google Sheet, from your own Gmail account, merged from a Gmail draft. Send yourself a test email first, then follow the sending and track opens, clicks, replies, bounces and unsubscribes.
 
