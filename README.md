@@ -50,7 +50,7 @@ Notes on the inputs:
 
 - `spreadsheet_url_or_id` accepts either a full Google Sheets URL or a bare spreadsheet ID. A sheet ID (`#gid=`) in the URL selects the sheet.
 
-- `draft_id` identifies a Gmail draft. YAMM MCP does not search Gmail: your client gets the draft from a Gmail connector.
+- `draft_id` identifies a Gmail draft: the letter `r` followed by digits. YAMM MCP does not search Gmail. See [How do I find my Gmail draft ID?](https://yamm.com/help/mcp/#how-do-i-find-my-gmail-draft-id).
 
 - `email_column` names the column that holds the recipients' addresses, when the sheet has more than one email column.
 
@@ -184,7 +184,7 @@ To send a mail merge in Claude, ChatGPT, or another MCP client, start with a pro
 
 - **Identify the Google Sheet with your recipients.** Provide the full Google Sheets URL, copied while the sheet you want is open, or name the spreadsheet so your client can find it.
 
-- **Identify the Gmail draft.** Name it by its subject so your client can find it with its Gmail connector.
+- **Identify the Gmail draft.** Give the draft's ID, or let your client find it if it has a Gmail connector.
 
 - **Say what you want done.** For example, send yourself a test email first, then send to everyone in the sheet.
 
