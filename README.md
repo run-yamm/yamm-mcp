@@ -1,6 +1,10 @@
-# YAMM MCP
+<!-- yamm-intro:start -->
+# YAMM
 
-Placeholder introduction: the first release replaces this title and paragraph with the intro maintained in the internal repository.
+[YAMM](https://yamm.com/) (Yet Another Mail Merge) is a mail merge for Gmail and Google Sheets. It sends a personalized email to each person on a list in a Google Sheet, from your own Gmail account. Give your AI assistant a Gmail draft and a sheet, and it can send you a test email first, then start the mail merge and report opens, clicks, replies, bounces and unsubscribes.
+
+This repository holds the YAMM plugin for Claude, Claude Code, ChatGPT, and Codex, which connects to YAMM MCP, the hosted remote MCP server. Any compatible MCP client can also connect to the server directly.
+<!-- yamm-intro:end -->
 
 > **TIP**
 >
@@ -19,6 +23,18 @@ You connect to YAMM MCP by adding this server URL to your client, which gives yo
 - [Claude](#claude)
 
 - [Other MCP clients](#other-compatible-mcp-clients) that support remote servers over Streamable HTTP with OAuth
+
+<!-- yamm-package:start -->
+
+## Plugin package
+
+**Version:** `0.1.0` · **License:** [Talarian Work License](LICENSE)
+
+Mail merge for Gmail and Google Sheets with YAMM (Yet Another Mail Merge): send a personalized email to each person on a list in a Google Sheet, from your own Gmail account, merged from a Gmail draft. Send yourself a test email first, then follow the sending and track opens, clicks, replies, bounces and unsubscribes.
+
+The repository contains the [YAMM plugin package](docs/plugin.md) for the hosted MCP server.
+
+<!-- yamm-package:end -->
 
 ## MCP tools
 

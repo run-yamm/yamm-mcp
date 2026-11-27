@@ -1,0 +1,34 @@
+{
+  "name": "yamm",
+  "displayName": "YAMM",
+  "version": "0.1.0",
+  "description": "Mail merge for Gmail and Google Sheets with YAMM (Yet Another Mail Merge): send a personalized email to each person on a list in a Google Sheet, from your own Gmail account, merged from a Gmail draft. Send yourself a test email first, then follow the sending and track opens, clicks, replies, bounces and unsubscribes.",
+  "author": {
+    "name": "Talarian",
+    "url": "https://talarian.io/"
+  },
+  "homepage": "https://yamm.com/",
+  "repository": "https://github.com/run-yamm/yamm-mcp",
+  "license": "LicenseRef-Talarian-Work",
+  "keywords": [
+    "yamm",
+    "yet-another-mail-merge",
+    "mail-merge",
+    "gmail",
+    "google-sheets",
+    "email-campaigns",
+    "email-tracking",
+    "mcp"
+  ],
+  "icon": "./assets/logo.png",
+  "documentationUrl": "https://github.com/run-yamm/yamm-mcp",
+  "supportUrl": "https://support.yamm.com/hc/en-us/requests/new",
+  "privacyPolicyUrl": "https://yamm.com/privacy-policy/",
+  "termsOfServiceUrl": "https://yamm.com/terms-of-service/",
+  "mcpServers": {
+    "yamm": {
+      "type": "http",
+      "url": "https://mcp.yamm.com/mcp"
+    }
+  }
+}

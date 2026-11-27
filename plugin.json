@@ -1,0 +1,65 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "yamm",
+  "version": "0.1.0",
+  "description": "Mail merge for Gmail and Google Sheets with YAMM (Yet Another Mail Merge): send a personalized email to each person on a list in a Google Sheet, from your own Gmail account, merged from a Gmail draft. Send yourself a test email first, then follow the sending and track opens, clicks, replies, bounces and unsubscribes.",
+  "author": {
+    "name": "Talarian",
+    "url": "https://talarian.io/"
+  },
+  "homepage": "https://yamm.com/",
+  "repository": "https://github.com/run-yamm/yamm-mcp",
+  "license": "LicenseRef-Talarian-Work",
+  "keywords": [
+    "yamm",
+    "yet-another-mail-merge",
+    "mail-merge",
+    "gmail",
+    "google-sheets",
+    "email-campaigns",
+    "email-tracking",
+    "mcp"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "YAMM",
+        "shortDescription": "Mail merge for Gmail & Sheets",
+        "longDescription": "YAMM (Yet Another Mail Merge) is a mail merge for Gmail and Google Sheets. ChatGPT can use it to send a personalized email to each person on a list in a Google Sheet, merged from a Gmail draft and sent from your own Gmail account. Your sheet then shows who opened, clicked, replied, bounced or unsubscribed.\n\nUse a Gmail draft and a Google Sheet to send personalized emails. You can send yourself a test email first. ChatGPT asks for confirmation before starting the mail merge.\n\nWhat you can do:\n\n- Send yourself a test email, merged from your draft and the first row of the sheet\n- Send a mail merge to every visible row of a sheet: filter or hide rows to send to only part of your list\n- Follow the sending progress\n- See opens, clicks, replies, bounces and unsubscribes for a campaign\n- See poll answers when the email includes a poll\n- Check your plan and how many recipients you can email now\n- Get YAMM help articles for setting up the sheet and the draft\n\nHow it works:\n\nYAMM sends through your Gmail account and writes each row's status in a Merge status column of the sheet. It skips addresses that bounced or unsubscribed before.\n\nAuthentication through OAuth: you sign in with your Google account and grant YAMM access to Gmail and Google Sheets.\n\nYAMM has been installed more than 16 million times and is rated 4.7/5 by more than 18,000 users. Built by Talarian, the team behind Autosheet, Awesome Table and Form Publisher.",
+        "developerName": "Talarian",
+        "category": "Communication",
+        "capabilities": [
+          "Send a personalized email to each person on a list",
+          "Merge a Gmail draft with each row of a Google Sheet",
+          "Personalize each email from the sheet's columns",
+          "Send yourself a test email first",
+          "Send to only the visible rows of a sheet",
+          "Set the sender name and reply-to address",
+          "Follow the sending progress",
+          "Send the rest later when a mail merge hits the daily limit",
+          "Show each person's status in the sheet",
+          "Track opens and clicks",
+          "Track replies",
+          "Report bounces and unsubscribes",
+          "Skip addresses that bounced or unsubscribed before",
+          "Report poll answers",
+          "Check the plan and daily sending limit",
+          "Find YAMM help articles"
+        ],
+        "websiteURL": "https://yamm.com",
+        "supportURL": "https://support.yamm.com/hc/en-us/requests/new",
+        "privacyPolicyURL": "https://yamm.com/privacy-policy/",
+        "termsOfServiceURL": "https://yamm.com/terms-of-service/",
+        "defaultPrompt": [
+          "Send me a test email of my Gmail draft with the contacts in <google_sheets_url>",
+          "Send my Gmail draft to every contact in <google_sheets_url>",
+          "How many recipients can I email today?"
+        ],
+        "logo": "./assets/logo.png",
+        "composerIcon": "./assets/composer-icon.png",
+        "brandColor": "#0B4F6C",
+        "brandColorDark": "#337EC1"
+      }
+    }
+  }
+}
